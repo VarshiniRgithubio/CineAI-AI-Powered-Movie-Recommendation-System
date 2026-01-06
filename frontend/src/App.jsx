@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
+const API_URL = "https://cineai-backend-0uvc.onrender.com";
+
 export default function App() {
   const [preference, setPreference] = useState("");
   const [movies, setMovies] = useState([]);
@@ -15,7 +17,7 @@ export default function App() {
     setMovies([]);
 
     try {
-      const res = await fetch("http://127.0.0.1:3001/recommend", {
+      const res = await fetch(`${API_URL}/recommend`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ preference })
