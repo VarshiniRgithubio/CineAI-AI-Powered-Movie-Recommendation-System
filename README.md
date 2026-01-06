@@ -121,54 +121,21 @@ CREATE TABLE recommendations (
 - **recommended_movies**: JSON array of recommended movies
 - **timestamp**: ISO 8601 timestamp
 
-## 🔗 API Endpoints
+🔗 API Endpoints
 
-### POST /api/recommendations
-
+POST /recommend  
 Generate movie recommendations
 
-**Request:**
-```json
+Request:
 {
-  "userInput": "action movies with strong female lead"
+  "preference": "action movies with strong female lead"
 }
-```
 
-**Response:**
-```json
+Response:
 {
-  "success": true,
-  "recommendations": [
-    {
-      "title": "Atomic Blonde",
-      "year": 2017,
-      "description": "An MI6 agent is sent undercover...",
-      "genre": "Action, Thriller",
-      "imdbScore": 6.7
-    }
-  ],
-  "timestamp": "2024-01-06T10:30:00.000Z"
+  "movies": ["Movie 1", "Movie 2", "Movie 3"]
 }
-```
 
-### GET /api/history
-
-Get recent recommendation history (last 50)
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": [
-    {
-      "id": "uuid-1",
-      "userInput": "action movies",
-      "recommendedMovies": [...],
-      "timestamp": "2024-01-06T10:30:00.000Z"
-    }
-  ]
-}
-```
 
 ## 🚀 Deployment
 
