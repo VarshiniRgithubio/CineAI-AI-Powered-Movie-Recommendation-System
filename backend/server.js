@@ -8,8 +8,9 @@ import cors from "@fastify/cors";
 
 const fastify = Fastify({ logger: true });
 await fastify.register(cors, {
-  origin: "http://localhost:3000"
-}); // ✅ fastify instance
+  origin: true
+});
+
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
