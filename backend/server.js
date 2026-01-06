@@ -61,11 +61,10 @@ const PORT = process.env.PORT || 3001;
 // log API key presence (not the key itself in production)
 console.log('OPENAI_API_KEY present:', Boolean(process.env.OPENAI_API_KEY));
 
-// Bind explicitly to IPv4 localhost to avoid IPv6 (::1) conflicts on Windows
-fastify.listen({ port: PORT, host: "127.0.0.1" }, (err, address) => {
-  if (err) {
-    fastify.log.error(err);
-    process.exit(1);
+// Bind to all interfaces so cloud hosts (Render, etc.) can reach the server
+fastify.listen(
+  { port: PORT, host: "0.0.0.0" },
+  () => {
+    console.log(`Server running on port ${PORT}`);
   }
-  console.log(`Server listening at ${address}`);
-});
+);
