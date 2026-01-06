@@ -1,0 +1,17 @@
+{
+  "name": "movie-recommendation-backend",
+  "version": "1.0.0",
+  "buildCommand": "echo 'No build needed for Node backend'",
+  "outputDirectory": ".",
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API key",
+      "required": true
+    },
+    "PORT": {
+      "description": "Port to run the server on",
+      "default": "3001",
+      "required": false
+    }
+  }
+}

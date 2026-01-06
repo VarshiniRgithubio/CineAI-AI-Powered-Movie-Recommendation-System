@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "movie-recommendation-backend",
+  "version": "1.0.0",
+  "description": "Movie recommendation backend using Fastify and OpenAI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "fastify",
+    "openai",
+    "movie",
+    "recommendation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.5.0",
+    "dotenv": "^16.6.1",
+    "fastify": "^4.24.3",
+    "openai": "^4.104.0",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
